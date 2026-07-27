@@ -29,7 +29,7 @@ public class SecurityConfig {
                 .securityContextRepository(NoOpServerSecurityContextRepository.getInstance())
 
                 .authorizeExchange(exchange -> exchange
-                        .pathMatchers("/auth/**").permitAll()
+                        .pathMatchers("/auth/**", "/dashboard/**", "/actuator/**", "/metrics/**").permitAll()
                         .anyExchange().permitAll() 
                 )
                 .build();

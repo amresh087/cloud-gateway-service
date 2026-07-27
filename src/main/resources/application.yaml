@@ -13,6 +13,11 @@ spring:
           predicates:
             - Path=/auth/**
 
+        - id: dashboard-metrics
+          uri: http://localhost:5053
+          predicates:
+            - Path=/dashboard/**
+
         - id: tenant-user-service
           uri: http://localhost:5053
           predicates:
